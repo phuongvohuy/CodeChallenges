@@ -1,0 +1,13 @@
+
+<!-- Generated template for the UserListComponent component -->
+<ion-searchbar (ionInput)="onSearchChange($event)"
+(ionCancel)="onCancel($event)"
+(ionClear)="onClear($event)">
+</ion-searchbar>
+<ion-scroll scrollY="true" class="result-list">
+	<ion-list>
+		<ion-item *ngFor="let userInfo of userList">
+			<user-item [userInfo]="userInfo"></user-item>
+		</ion-item>
+	</ion-list>
+</ion-scroll>

@@ -1,0 +1,26 @@
+<!-- Generated template for the UserItemComponent component -->
+<div *ngIf="isMobile" class="mobile">
+	<ion-grid>
+		<ion-row>
+			<ion-col col-10>
+				<div>{{userInfo.name}}</div>
+				<div>{{userInfo.email}}</div>
+				<div>last login: {{userInfo.getFromNow()}}</div>
+			</ion-col>
+			<ion-col col-2 (click)="chooseAction()"><ion-icon ios="ios-more" md="md-more"></ion-icon></ion-col>
+		</ion-row>
+	</ion-grid>
+</div>
+<div *ngIf="!isMobile" class="browser">
+	<ion-grid>
+		<ion-row>
+			<ion-col col-6>
+				<div>{{userInfo.name}}</div>
+				<div>{{userInfo.email}}</div>
+			</ion-col>
+			<ion-col col-2>{{userInfo.createdTime}}</ion-col>
+			<ion-col col-2>{{userInfo.getFromNow()}}</ion-col>
+			<ion-col col-2 (click)="chooseAction()"><ion-icon ios="ios-more" md="md-more"></ion-icon></ion-col>
+		</ion-row>
+	</ion-grid>
+</div>

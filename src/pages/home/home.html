@@ -1,0 +1,66 @@
+<ion-header no-border>
+	<ion-navbar class="header-app">
+		<ion-buttons left>
+			<button ion-button icon-end>
+				<ion-icon name="menu"></ion-icon>
+				<span class="header-title">Product Name</span>
+			</button>
+		</ion-buttons>
+		<ion-title></ion-title>
+		<ion-buttons right>
+			<button ion-button icon-end>
+				<ion-icon name="bookmarks"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+	<ion-toolbar>
+		<ion-grid>
+			<ion-row>
+				<ion-col col-md-3 class="hidden-xs-down">
+					Users
+				</ion-col>
+				<ion-col col-md-9 col>
+					All Users
+					<div class="action-menu">
+						<ion-icon name="apps"></ion-icon>
+						<ion-icon name="reorder"></ion-icon>
+						<ion-icon name="settings"></ion-icon>
+						<ion-icon ios="ios-more" md="md-more"></ion-icon>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</ion-toolbar>
+</ion-header>
+<ion-content>
+	<ion-grid class="content-container">
+		<ion-row class="content">
+			<ion-col col-md-3 class="hidden-xs-down">
+				<ion-list>
+					<ion-item (click)="chooseMenu('ALL_USER')" [ngClass]="{'selected': selectePage === 'ALL_USER'}">
+						All Users
+					</ion-item>
+					<ion-item (click)="chooseMenu('FAVORITE')" [ngClass]="{'selected': selectePage === 'FAVORITE'}">
+						Favorite
+					</ion-item>
+					<ion-item (click)="chooseMenu('ADMINISTRATOR')" [ngClass]="{'selected': selectePage === 'ADMINISTRATOR'}">
+						Administrator
+					</ion-item>
+					<ion-item (click)="chooseMenu('NON_ADMINS')" [ngClass]="{'selected': selectePage === 'NON_ADMINS'}">
+						Non-Admins
+					</ion-item>
+					<ion-item (click)="chooseMenu('ARCHIVED')" [ngClass]="{'selected': selectePage === 'ARCHIVED'}">
+						Archived
+					</ion-item>
+				</ion-list>
+			</ion-col>
+			<ion-col col-md-9 col class="search-form" *ngIf="dataReady" [ngSwitch]="selectePage">
+				<user-list [userProvider]="userProvider" *ngSwitchCase="'ALL_USER'"></user-list>
+				<favorite *ngSwitchCase="'FAVORITE'"></favorite>
+				<administrator *ngSwitchCase="'ADMINISTRATOR'"></administrator>
+				<non-admin *ngSwitchCase="'NON_ADMINS'"></non-admin>
+				<archived *ngSwitchCase="'ARCHIVED'"></archived>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

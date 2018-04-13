@@ -1,0 +1,104 @@
+page-home {
+    .header-app {
+        .toolbar-background {
+            background-color: blue;
+		}
+		
+		.header-title {
+			padding-left: 20px;
+		}
+        
+    }
+
+    .content-container {
+        height: 100%;
+
+        .content {
+            height: 100%;
+
+            .search-form {
+                padding: 20px;
+                padding-bottom: 60px;
+                background-color: #f4f4f4;
+
+                user-list, favorite {
+                    height: 100%;
+                }
+			}
+			
+			ion-item.selected {
+				background-color: #c8c7cc;
+			}
+        }
+
+    }
+    .action-menu {
+      display: inline-block;
+      float: right;
+      font-size: 20px;
+
+      ion-icon {
+        padding-left:20px;
+      }
+    }
+}
+
+.invisible {
+    visibility: hidden !important;
+  }
+  
+  .hidden-xs-up {
+    display: none !important;
+  }
+  
+  @media (max-width: 575px) {
+    .hidden-xs-down {
+      display: none !important;
+    }
+  }
+  
+  @media (min-width: 576px) {
+    .hidden-sm-up {
+      display: none !important;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .hidden-sm-down {
+      display: none !important;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .hidden-md-up {
+      display: none !important;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .hidden-md-down {
+      display: none !important;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .hidden-lg-up {
+      display: none !important;
+    }
+  }
+  
+  @media (max-width: 1199px) {
+    .hidden-lg-down {
+      display: none !important;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .hidden-xl-up {
+      display: none !important;
+    }
+  }
+  
+  .hidden-xl-down {
+    display: none !important;
+  }
